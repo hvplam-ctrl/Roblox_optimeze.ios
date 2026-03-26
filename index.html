@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>⚠️ YOUR FILES ARE ENCRYPTED ⚠️</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+        
+        body {
+            background: #8B0000;
+            font-family: 'Courier New', 'MS Gothic', monospace;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Toàn màn hình */
+        .fullscreen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #4a0000 0%, #1a0000 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        /* Hộp nội dung chính */
+        .ransom-box {
+            background: #000000;
+            border: 3px solid #ff0000;
+            max-width: 700px;
+            width: 90%;
+            padding: 30px;
+            box-shadow: 0 0 50px rgba(255,0,0,0.5);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 20px rgba(255,0,0,0.5); }
+            50% { box-shadow: 0 0 40px rgba(255,0,0,0.8); }
+        }
+        
+        /* Tiêu đề */
+        h1 {
+            color: #ff0000;
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 25px;
+            font-family: 'Courier New', monospace;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            word-break: break-word;
+        }
+        
+        /* Nội dung */
+        .content {
+            color: #ffffff;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .section {
+            margin: 20px 0;
+            padding: 10px;
+            border-left: 3px solid #ff0000;
+        }
+        
+        .section-title {
+            color: #ffaa00;
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        
+        /* Đồng hồ đếm ngược */
+        .timer {
+            text-align: center;
+            margin: 25px 0;
+            padding: 15px;
+            background: #1a0000;
+            border: 2px solid #ff0000;
+        }
+        
+        .timer-label {
+            color: #ff8888;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+        
+        .timer-value {
+            color: #ff0000;
+            font-size: 48px;
+            font-weight: bold;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 5px;
+            text-shadow: 0 0 10px red;
+        }
+        
+        /* Ô nhập password */
+        .password-area {
+            margin: 25px 0;
+            text-align: center;
+        }
+        
+        input {
+            background: #1a1a1a;
+            border: 2px solid #ff0000;
+color: #ff0000;
+            padding: 12px 20px;
+            width: 250px;
+            font-family: monospace;
+            font-size: 14px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: #ff6666;
+        }
+        
+        button {
+            background: #8b0000;
+            border: 1px solid #ff0000;
+            color: white;
+            padding: 12px 25px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+        
+        button:hover {
+            background: #ff0000;
+            transform: scale(1.02);
+        }
+        
+        /* Kết quả */
+        .result {
+            margin-top: 15px;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            min-height: 50px;
+        }
+        
+        .error {
+            color: #ff6666;
+            background: #330000;
+        }
+        
+        .success {
+            color: #66ff66;
+            background: #003300;
+        }
+        
+        /* Bitcoin address */
+        .bitcoin {
+            background: #111;
+            padding: 10px;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 11px;
+            word-break: break-all;
+            color: #ffaa00;
+            text-align: center;
+            border: 1px dashed #ff0000;
+        }
+        
+        /* Nút thoát ẩn */
+        .hidden-exit {
+            position: fixed;
+            bottom: 5px;
+            right: 5px;
+            color: #330000;
+            font-size: 10px;
+            cursor: pointer;
+            z-index: 9999;
+            background: rgba(0,0,0,0.3);
+            padding: 3px 8px;
+        }
+        
+        .hidden-exit:hover {
+            color: #ff0000;
+            background: black;
+        }
+        
+        .footer {
+            margin-top: 20px;
+            font-size: 10px;
+            text-align: center;
+            color: #663333;
+            border-top: 1px solid #330000;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="fullscreen">
+        <div class="ransom-box">
+            <h1>⚠️ Ooops, your important files are encrypted! ⚠️</h1>
+            
+            <div class="content">
+                <div class="section">
+                    <div class="section-title">🔒 WHAT HAPPENED TO MY PC?</div>
+                    <div>All your files are locked on this pc and they are not usable for now.</div>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title">💰 WILL I GET MY FILES BACK?</div>
+                    <div>Yes. But only if you pay us <span style="color:#ffaa00; font-weight:bold;">1.5 BITCOIN</span>. If you don't pay, your pc will become unusable.</div>
+</div>
+                
+                <div class="section">
+                    <div class="section-title">📩 BITCOIN ADDRESS</div>
+                    <div class="bitcoin">
+                        Send 1.5 BTC to: <span id="btcAddress">1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</span><br>
+                        Email: <span id="email">909.06/6@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Đồng hồ đếm ngược -->
+            <div class="timer">
+                <div class="timer-label">⏰ TIME REMAINING BEFORE PERMANENT LOCK ⏰</div>
+                <div class="timer-value" id="timer">00:59:56</div>
+            </div>
+            
+            <!-- Ô nhập password -->
+            <div class="password-area">
+                <input type="password" id="passwordInput" placeholder="Enter password to unlock" autocomplete="off">
+                <button onclick="checkPassword()">🔓 UNLOCK</button>
+            </div>
+            
+            <div class="result" id="result"></div>
+            
+            <div class="footer">
+                ⚠️ THIS IS A SIMULATION - NO FILES WERE ACTUALLY ENCRYPTED ⚠️<br>
+                For educational/fun purposes only
+            </div>
+        </div>
+    </div>
+    
+    <!-- Nút thoát ẩn ở góc dưới phải -->
+    <div class="hidden-exit" onclick="exitSystem()" title="Alt+F4 or click here to exit">
+        🔓 EXIT SYSTEM 🔓
+    </div>
+
+    <script>
+        // Password đúng
+        const CORRECT_PASSWORD = "123";
+        
+        // Đồng hồ đếm ngược (1 giờ)
+        let totalSeconds = 3600; // 1 giờ = 3600 giây
+        let timerInterval;
+        
+        function updateTimer() {
+            if (totalSeconds <= 0) {
+                clearInterval(timerInterval);
+                document.getElementById('timer').innerHTML = "00:00:00";
+                document.getElementById('result').innerHTML = "❌ TIME'S UP! SYSTEM LOCKED PERMANENTLY! ❌\n(Just kidding - close the window)";
+                document.getElementById('result').className = 'result error';
+                document.getElementById('passwordInput').disabled = true;
+                document.querySelector('button').disabled = true;
+                return;
+            }
+            
+            const hours = Math.floor(totalSeconds / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+            
+            const timerDisplay = document.getElementById('timer');
+            timerDisplay.innerHTML = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            
+            totalSeconds--;
+        }
+        
+        // Bắt đầu đếm ngược
+        timerInterval = setInterval(updateTimer, 1000);
+        
+        // Kiểm tra password
+        function checkPassword() {
+const passwordInput = document.getElementById('passwordInput');
+            const resultDiv = document.getElementById('result');
+            const userPassword = passwordInput.value.trim();
+            
+            if (userPassword === CORRECT_PASSWORD) {
+                resultDiv.innerHTML = '✅ ACCESS GRANTED! Files decrypted successfully! (This was a simulation - your files were never encrypted) ✅';
+                resultDiv.className = 'result success';
+                resultDiv.style.color = '#66ff66';
+                clearInterval(timerInterval);
+                document.querySelector('.ransom-box').style.borderColor = '#00ff00';
+                document.querySelector('.ransom-box').style.boxShadow = '0 0 50px rgba(0,255,0,0.5)';
+                document.getElementById('passwordInput').disabled = true;
+                document.querySelector('button').disabled = true;
+            } else {
+                resultDiv.innerHTML = '❌ WRONG PASSWORD! Access denied. Your files remain locked! ❌';
+                resultDiv.className = 'result error';
+                const input = document.getElementById('passwordInput');
+                input.style.borde
